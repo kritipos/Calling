@@ -1,7 +1,7 @@
 // src/services/api.js
 import axios from 'axios';
 
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxkUiaXmFNhVAOpCfxCfzYiohajtrYvqm_jOV3HnxCdMs1pYBtAOVnRRszY_k6YQP_YmQ/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyVUK3n1Qu_aodoSSMTFIMN5c7OiE2O6EUdXVvTSZZG1ykJkcBV9dodnd4lmqfpwARYdA/exec';
 
 // Use a CORS proxy for development
 const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/';

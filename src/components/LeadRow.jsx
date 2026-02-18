@@ -20,7 +20,7 @@ const LeadRow = ({
   };
 
   const handleCallClick = (e) => {
-    e.stopPropagation(); // Prevent row selection or any other events
+    e.stopPropagation();
     const phoneNumber = lead.mobile;
     if (phoneNumber) {
       const formattedNumber = String(phoneNumber).replace(/\D/g, '');
@@ -28,9 +28,21 @@ const LeadRow = ({
     }
   };
 
+  const handleMessageClick = (e) => {
+    e.stopPropagation();
+    const phoneNumber = lead.mobile;
+    if (phoneNumber) {
+      const formattedNumber = String(phoneNumber).replace(/\D/g, '');
+      // Open default SMS app
+      window.location.href = `sms:${formattedNumber}`;
+    }
+  };
+
+ 
+
+
   const getBadgeColor = (value) => {
     if (!value) return '';
-    // You can customize this based on your data
     return 'badge-info';
   };
 
@@ -130,6 +142,19 @@ const LeadRow = ({
       </td>
       <td>
         <div className="action-buttons">
+          {/* Message Button */}
+          {lead.mobile && (
+            <button 
+              className="btn-icon message"
+              onClick={handleMessageClick}
+              title="Send SMS"
+            >
+              <i className="fas fa-comment"></i>
+            </button>
+          )}
+          
+          
+
           {/* WhatsApp Button */}
           {lead.mobile && (
             <a 
@@ -143,6 +168,7 @@ const LeadRow = ({
               <i className="fab fa-whatsapp"></i>
             </a>
           )}
+          
           {!isEditing && (
             <button 
               className="btn-icon edit"

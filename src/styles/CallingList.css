@@ -755,3 +755,42 @@
 .pagination-container .text-muted {
   text-align: center;
 }
+
+/* Add these new button styles */
+.btn-icon.message {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn-icon.message:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+}
+
+.btn-icon.mail {
+  background-color: #2196F3;
+  color: white;
+}
+
+.btn-icon.mail:hover {
+  background-color: #1976D2;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(33, 150, 243, 0.3);
+}
+
+/* Update action-buttons container to accommodate more buttons */
+.action-buttons {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  max-width: 200px;
+}
+
+/* Make buttons slightly smaller to fit more */
+.action-buttons .btn-icon {
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+}
